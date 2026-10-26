@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f5f7" />
+    <title>NoticeSahi — Know before you go</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="NoticeSahi home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>notice<span class="brand-accent">sahi</span></span>
+        </a>
+        <div class="topbar-right">
+          <span class="secure-label"><span class="secure-dot"></span> Private by design</span>
+          <button class="text-button" id="aboutButton" type="button">How it works <span aria-hidden="true">↗</span></button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> CAMPUS, MADE CLEAR</div>
+            <h1>Know before<br />you <em>go.</em></h1>
+            <p class="hero-description">Students get event details in posters, voice notes and different languages. NoticeSahi turns them into one clear plan.</p>
+            <div class="hero-note"><span class="sparkle">✳</span> Conflicts stay visible. No guessing which source is right.</div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="hero-card">
+              <div class="hero-card-top"><span class="micro-pill"><span></span> EVENT CHECK</span><span class="hero-card-dots">···</span></div>
+              <div class="hero-event-date"><span class="date-tile">24<br /><small>OCT</small></span><span class="hero-event-name">Design<br />Showcase</span></div>
+              <div class="hero-mini-row"><span class="mini-icon">⌖</span><span>Innovation Hall</span><span class="check-mark">✓</span></div>
+              <div class="hero-mini-row conflict-row"><span class="mini-icon">◷</span><span>4:00 PM <b>↔</b> 5:00 PM</span><span class="alert-mark">!</span></div>
+              <div class="hero-card-footer"><span>Two sources checked</span><span class="source-chips"><i>P</i><i>◖</i></span></div>
+            </div>
+            <div class="floating-bubble bubble-top"><span class="bubble-symbol">✦</span> checked</div>
+            <div class="floating-bubble bubble-bottom"><span class="bubble-wave">〰</span> सुनें · listen</div>
+          </div>
+        </section>
+
+        <section class="judge-strip" aria-label="Why NoticeSahi stands out">
+          <article class="judge-card"><span class="judge-index">01 · CREATIVE</span><h3>Two-source truth check</h3><p>Compare what’s printed with what’s spoken, then show the evidence behind a mismatch.</p></article>
+          <article class="judge-card"><span class="judge-index">02 · IMPACT</span><h3>Access in more than one way</h3><p>Translate and listen to event details so language and reading barriers matter less.</p></article>
+          <article class="judge-card"><span class="judge-index">03 · FUNCTIONAL</span><h3>From notice to next step</h3><p>Upload or record, review, ask the organiser, then save a confirmed event to your calendar.</p></article>
+        </section>
+
+        <section class="workspace" id="workspace">
+          <div class="section-heading">
+            <div><div class="step-label"><span>01</span> YOUR EVENT</div><h2>Bring both sources together</h2></div>
+            <div class="language-control"><label for="language">CARD LANGUAGE</label><select id="language">
+              <option value="en-IN">English</option><option value="hi-IN">हिन्दी · Hindi</option><option value="ta-IN">தமிழ் · Tamil</option><option value="te-IN">తెలుగు · Telugu</option><option value="bn-IN">বাংলা · Bengali</option><option value="kn-IN">ಕನ್ನಡ · Kannada</option><option value="mr-IN">मराठी · Marathi</option><option value="gu-IN">ગુજરાતી · Gujarati</option><option value="ml-IN">മലയാളം · Malayalam</option><option value="pa-IN">ਪੰਜਾਬੀ · Punjabi</option>
+            </select></div>
+          </div>
+
+          <div class="work-grid">
+            <div class="input-panel">
+              <form id="eventForm">
+                <div class="upload-card" id="posterDrop">
+                  <div class="upload-head"><div class="file-icon poster-icon"><span>▧</span></div><div><h3>Event poster</h3><p>Read the details printed on it</p></div><span class="required-tag">REQUIRED</span></div>
+                  <label class="drop-zone" for="posterInput" id="posterLabel"><span class="upload-symbol">↑</span><span class="drop-title">Drop a poster here <b>or browse</b></span><span class="drop-help">JPG, PNG or PDF · one page</span></label>
+                  <input id="posterInput" name="poster" type="file" accept="image/png,image/jpeg,application/pdf" hidden required />
+                  <div class="file-selected" id="posterSelected" hidden><img id="posterThumb" class="poster-thumb" alt="Selected poster preview" hidden /><span id="posterTypeBadge" class="poster-type-badge" hidden>PDF</span><span class="file-check">✓</span><span class="file-name"></span><button type="button" class="remove-file" aria-label="Remove poster">×</button></div>
+                </div>
+
+                <div class="upload-card" id="audioDrop">
+                  <div class="upload-head"><div class="file-icon audio-icon"><span>♫</span></div><div><h3>Spoken announcement</h3><p>Catch what the poster can’t tell you</p></div><span class="required-tag">REQUIRED</span></div>
+                  <label class="drop-zone" for="audioInput" id="audioLabel"><span class="upload-symbol">↑</span><span class="drop-title">Drop an audio clip <b>or browse</b></span><span class="drop-help">Up to 30 seconds · audio under 3 MB</span></label>
+                  <input id="audioInput" name="audio" type="file" accept="audio/*,video/webm" hidden required />
+                  <div class="file-selected" id="audioSelected" hidden><span class="file-check">✓</span><span class="file-name"></span><button type="button" class="remove-file" aria-label="Remove audio">×</button></div>
+                  <audio id="audioPreview" class="audio-preview" controls hidden></audio>
+                  <div class="record-controls"><button id="recordButton" class="record-button" type="button" aria-pressed="false"><span class="record-dot"></span><span>Record a quick announcement</span></button><span id="recordStatus" aria-live="polite">or upload an audio clip</span></div>
+                </div>
+
+                <div class="privacy-line"><span class="lock-icon">▣</span> Files go to Sarvam for processing, aren’t stored by this demo, and must total under 4 MB. Checks use API credits.</div>
+                <button class="primary-button" id="analyzeButton" type="submit"><span class="button-icon">✳</span><span>Check my event</span><span class="button-arrow">→</span></button>
+                <button class="sample-button" id="sampleButton" type="button">Preview a sample mismatch <span>↗</span></button>
+              </form>
+            </div>
+
+            <div class="result-panel" id="resultPanel" aria-live="polite">
+              <div class="result-empty" id="emptyState">
+                <div class="empty-illustration"><div class="empty-sheet sheet-back"></div><div class="empty-sheet sheet-front"><span class="sheet-line long"></span><span class="sheet-line"></span><span class="sheet-line short"></span><span class="sheet-stamp">✳</span></div><div class="empty-wave">〰</div></div>
+                <div class="empty-copy"><span class="result-kicker">YOUR CHECK WILL APPEAR HERE</span><h3>Clarity, coming right up.</h3><p>We’ll compare what’s printed with what’s spoken, then show you what’s confirmed and what needs a second look.</p></div>
+                <div class="empty-steps"><span><i>1</i> Read the poster</span><b>·</b><span><i>2</i> Hear the announcement</span><b>·</b><span><i>3</i> Compare details</span></div>
+              </div>
+              <div class="result-loading" id="loadingState" hidden>
+                <div class="loader-orbit"><span></span><span></span><span></span></div>
+                <span class="result-kicker">NOTICE SAHI IS CHECKING</span><h3 id="loadingTitle">Reading your event poster…</h3><p id="loadingText">Then we’ll listen to the announcement and compare the details.</p>
+                <div class="loading-track"><span id="loadingProgress"></span></div>
+                <div class="loading-steps"><span class="loading-step active" data-step="poster">01 <small>POSTER</small></span><span class="loading-step" data-step="audio">02 <small>AUDIO</small></span><span class="loading-step" data-step="compare">03 <small>COMPARE</small></span></div>
+              </div>
+              <div class="result-content" id="resultContent" hidden></div>
+            </div>
+          </div>
+          <div class="api-footnote"><span class="api-badge">SARVAM AI</span><span>Vision reads · Saaras listens · 105B compares</span><span class="footnote-right">Built for campus events <span>✳</span></span></div>
+        </section>
+      </main>
+
+      <footer class="footer"><span>Noticesahi <span class="footer-dot">·</span> Clear details, calmer arrivals.</span><span>Always confirm any flagged details with the organiser.</span></footer>
+    </div>
+    <dialog id="aboutDialog" class="about-dialog"><button class="dialog-close" id="closeAbout" aria-label="Close">×</button><span class="result-kicker">HOW IT WORKS</span><h2>Two sources. One clearer plan.</h2><ol><li><b>Vision</b> reads the event poster and extracts key details.</li><li><b>Saaras</b> transcribes the spoken announcement.</li><li><b>Sarvam 105B</b> compares the two sources and flags conflicts.</li><li><b>Translate and Bulbul</b> can make the final card easier to read or hear.</li></ol><p>NoticeSahi never decides which source is right. A person should confirm any mismatch.</p></dialog>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
